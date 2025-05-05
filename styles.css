@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Gothic+Expanded+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cal+Sans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Special+Gothic+Expanded+One&display=swap');
 
@@ -5,6 +6,10 @@ body {
     font-family: "Cal Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
 }
 
 h1 {
@@ -20,10 +25,18 @@ h1 {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    background-color: #267349;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    letter-spacing: 1.5px;
 }
 
 .navbar {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Cal Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: white;
@@ -33,11 +46,15 @@ h1 {
     position: relative;
     right: 150px;
     font-size: 50px;
-    /* border: 3px solid black;     
-    border-radius: 1px; */
     margin-bottom: 0;
     display: flex;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 ul {
@@ -53,11 +70,39 @@ li {
     padding: 10px;
     cursor: pointer;
     font-size: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced navbar item hover effect */
+li:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2e8b57;
+    transition: width 0.3s ease;
+}
+
+li:hover {
+    color: #2e8b57;
+    transform: translateY(-2px);
+}
+
+li:hover:after {
+    width: 100%;
 }
 
 .logo {
     position: absolute;
     left: 500px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .logo img {
@@ -65,6 +110,11 @@ li {
     size: 300px;
     width: 290px;
     height: 70px;
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    filter: drop-shadow(0 0 5px rgba(46, 139, 87, 0.3));
 }
 
 /* Hamburger menu for mobile - now hidden since we don't need it */
@@ -105,7 +155,7 @@ li {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* Section styling */
